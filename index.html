@@ -28,6 +28,28 @@
             <section id="contact">
                 <h3>Contact</h3>
                 <p>A contact page is a standard web page on a website used to allow the visitor to contact the website owner or people who are responsible for the maintenance of the site.</p>
+                <form id="contact_form">
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        <div id="contact_name" class="fields">
+                            <label>Name</label> 
+                            <input type="text" size="30" name="name">
+                            <div class="error hide"></div>
+                        </div>
+                        <div id="contact_email" class="fields">
+                            <label>Email</label> 
+                            <input type="text" size="30" name="email">
+                            <div class="error hide"></div>
+                        </div>
+                        <div id="contact_phone" class="fields">
+                            <label>Phone</label> 
+                            <input type="text" size="10" name="phone">
+                            <div class="error hide"></div>
+                        </div>
+                        <button type="submit">Submit</button>
+                        <div class="feedback hide">Message</div>
+                    </fieldset>
+                </form>
                 <p>
                     <a href="#" data-link="home">Home</a>
                     <a href="#" data-link="about">About</a>

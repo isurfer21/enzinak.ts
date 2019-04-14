@@ -2,25 +2,27 @@ export class Style {
     public static getValue(elementRef: HTMLElement, ruleName: any) {
         return getComputedStyle(elementRef)[ruleName];
     }
-    public static hasClass(elementRef: HTMLElement, className: string) {
+    public static hasClass(elementRef: HTMLElement, className: string): boolean {
         if (elementRef.classList) {
-            elementRef.classList.contains(className);
+            return elementRef.classList.contains(className);
         } else {
-            new RegExp('(^| )' + className + '( |$)', 'gi').test(elementRef.className);
+            return new RegExp('(^| )' + className + '( |$)', 'gi').test(elementRef.className);
         }
     }
-    public static addClass(elementRef: HTMLElement, className: string) {
+    public static addClass(elementRef: HTMLElement, classNames: string) {
         if (elementRef.classList) {
-            elementRef.classList.add(className);
+            let classes = classNames.split(' ');
+            elementRef.classList.add(...classes);
         } else {
-            elementRef.className += ' ' + className;
+            elementRef.className += ' ' + classNames;
         }
     }
-    public static removeClass(elementRef: HTMLElement, className: string) {
+    public static removeClass(elementRef: HTMLElement, classNames: string) {
         if (elementRef.classList) {
-            elementRef.classList.remove(className);
+            let classes = classNames.split(' ');
+            elementRef.classList.remove(...classes);
         } else {
-            elementRef.className = elementRef.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            elementRef.className = elementRef.className.replace(new RegExp('(^|\\b)' + classNames.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
     }
     public static toggleClass(elementRef: HTMLElement, className: string) {

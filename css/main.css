@@ -1,3 +1,24 @@
 .hide {
     display: none;
-}  
+}
+.primary {
+	color: royalblue;
+}
+.secondary {
+	color: darkgrey;
+}
+.danger {
+	color: red;
+}
+.success {
+	color: green;
+}
+.warning {
+	color: orange;
+}
+.info {
+	color: teal;
+}
+form .fields {
+	margin-bottom: 5px;
+}

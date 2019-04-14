@@ -1,6 +1,6 @@
-export class HashMap{
+export class HashMap {
     private list: any;
-    constructor(map) {
+    constructor(map: any) {
         this.list = (map != undefined) ? map : {};
     }
     public isEmpty() {
@@ -9,16 +9,16 @@ export class HashMap{
     public heap() {
         return this.list;
     }
-    public add(key, value) {
+    public add(key: string, value: any) {
         this.list[key] = value;
     }
-    public remove(key) {
+    public remove(key: string) {
         delete this.list[key];
     }
-    public fetch(key) {
+    public fetch(key: string) {
         return this.list[key];
     }
-    public find(value) {
+    public find(value: any) {
         for (let o in this.list) {
             if (this.list[o] == value) {
                 return o;
@@ -26,7 +26,7 @@ export class HashMap{
         }
         return null;
     }
-    public findAll(value) {
+    public findAll(value: any) {
         let a = [];
         for (let o in this.list) {
             if (this.list[o] == value) {
