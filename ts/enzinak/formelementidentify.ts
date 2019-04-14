@@ -4,18 +4,21 @@ export class FormElementIdentify {
 	 * param  {Element} element  the element to check
 	 * return {Boolean} true if the element is an input, false if not
 	 */
-	public static isValidElement(element: HTMLInputElement): boolean {
+	public static isValidElement(element: HTMLInputElement | HTMLTextAreaElement): boolean {
 		return (!!element.name && !!element.value) ? true : false;
-	};
+	}
 
 	/**
 	 * Checks if an element’s value can be saved (e.g. not an unselected checkbox).
 	 * param  {Element} element  the element to check
 	 * return {Boolean} true if the value should be added, false if not
 	 */
-	public static isValidValue(element: HTMLInputElement): boolean {
-		return (!(['checkbox', 'radio'].indexOf(element.type) >= 0) || element.checked) ? true : false;
-	};
+	public static isValidValue(element: HTMLInputElement | HTMLTextAreaElement): boolean {
+		if (['checkbox', 'radio'].indexOf(element.type) >= 0) {
+			return ((<HTMLInputElement>element).checked) ? true : false;
+		}
+		return true;
+	}
 
 	/**
 	 * Checks if an input is a checkbox, because checkboxes allow multiple values.

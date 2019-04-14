@@ -36,14 +36,41 @@
                             <input type="text" size="30" name="name">
                             <div class="error hide"></div>
                         </div>
+                        <div id="contact_gender" class="fields">
+                            <label>Gender</label> 
+                            <input type="radio" name="gender" value="male"> <label>Male</label>
+                            <input type="radio" name="gender" value="female"> <label>Female</label>
+                            <div class="error hide"></div>
+                        </div>
                         <div id="contact_email" class="fields">
                             <label>Email</label> 
-                            <input type="text" size="30" name="email">
+                            <input type="text" size="50" name="email">
                             <div class="error hide"></div>
                         </div>
                         <div id="contact_phone" class="fields">
                             <label>Phone</label> 
-                            <input type="text" size="10" name="phone">
+                            <input type="text" size="15" name="phone">
+                            <div class="error hide"></div>
+                        </div>
+                        <div id="contact_relation" class="fields">
+                            <label>Relation</label> 
+                            <select name="relation">
+                                <option value="family">Family</option>
+                                <option value="friend">Friend</option>
+                                <option value="relative">Relative</option>
+                                <option value="colleague">Colleague</option>
+                            </select>
+                            <div class="error hide"></div>
+                        </div>
+                        <div id="contact_comment" class="fields">
+                            <label>Comment</label><br>
+                            <textarea name="comment"></textarea>
+                            <div class="error hide"></div>
+                        </div>
+                        <div id="contact_permit" class="fields">
+                            <label>Permission</label> 
+                            <input type="checkbox" name="permit" value="global"> <label>Global</label> 
+                            <input type="checkbox" name="permit" value="local"> <label>Local</label> 
                             <div class="error hide"></div>
                         </div>
                         <button type="submit">Submit</button>

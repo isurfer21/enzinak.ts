@@ -32,9 +32,9 @@ export class FormDataValidate {
         this.fieldWrapperPrefix = prefix;
     }
     public isValid(values: any): boolean {
-        let totalErrors = [];
+        let totalErrors: number = 0;
         for (let i in this.fieldValidations) {
-            let valid = null,
+            let valid: boolean | null = null,
                 isRequired: boolean = false;
             for (let j in this.fieldValidations[i]) {
                 switch (j) {
@@ -69,11 +69,11 @@ export class FormDataValidate {
                         break;
                 }
                 if (valid !== null && !valid) {
-                    totalErrors.push('x');
+                    totalErrors++;
                     break;
                 }
             }
         }
-        return (totalErrors.join('').length > 0) ? false : true;
+        return (totalErrors > 0) ? false : true;
     }
 }

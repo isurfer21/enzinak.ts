@@ -11,8 +11,10 @@ export class FormDataMap {
 
 	private filterSelectedValues(options: any): any[] {
 		let values: any[] = [];
-		for (let i in options) {
-			options[i].selected ? values.concat(options[i].value) : values;
+		for (let i = 0; i < options.length; i++) {
+			if (options[i].selected) {
+				values.push(options[i].value);
+			}
 		}
 		return values;
 	}

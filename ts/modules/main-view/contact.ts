@@ -9,6 +9,10 @@ import { FormDataMap } from "enzinak/formdatamap";
 export class Contact {
 	private uid = 'contact';
 
+	private views: ViewStack;
+	private formDataValidate: FormDataValidate;
+	private formDataMap: FormDataMap;
+
 	private containerSelf: HTMLElement;
 
 	private containerAnchor: NodeList;
@@ -21,10 +25,6 @@ export class Contact {
 
 	private containerMessage: HTMLElement;
 
-	private views: ViewStack;
-	private formDataValidate: FormDataValidate;
-	private formDataMap: FormDataMap;
-
 	private readonly i18n = {
 		status: {
 			success: "Done!",
@@ -32,10 +32,14 @@ export class Contact {
 		},
 		validations: {
 			required_name: "Please enter your name",
+			required_gender: "Please select your gender",
 			required_email: "Please enter your email address",
 			invalid_email: "Please enter a valid email address",
-			required_phone: "Please enter phone",
-			invalid_phone: "Please enter a valid phone"
+			required_phone: "Please enter your phone",
+			invalid_phone: "Please enter a valid phone",
+			required_relation: "Please select your relation",
+			required_comment: "Please enter your comment",
+			required_permit: "Please check to permit",
 		}
 	};
 
@@ -105,6 +109,9 @@ export class Contact {
 			name: {
 				Required: this.i18n.validations.required_name
 			},
+			gender: {
+				Required: this.i18n.validations.required_gender
+			},
 			email: {
 				Required: this.i18n.validations.required_email,
 				Email: this.i18n.validations.invalid_email
@@ -112,6 +119,15 @@ export class Contact {
 			phone: {
 				Required: this.i18n.validations.required_phone,
 				Telephone: this.i18n.validations.invalid_phone
+			},
+			relation: {
+				Required: this.i18n.validations.required_relation
+			},
+			comment: {
+				Required: this.i18n.validations.required_comment
+			},
+			permit: {
+				Required: this.i18n.validations.required_permit
 			}
 		};
 
