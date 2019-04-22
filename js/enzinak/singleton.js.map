@@ -1,0 +1,1 @@
+{"version":3,"file":"singleton.js","sourceRoot":"","sources":["../../ts/enzinak/singleton.ts"],"names":[],"mappings":";;;IAAA,MAAa,SAAS;QAIrB,YAAY,SAAc;YACzB,IAAI,CAAC,SAAS,GAAG,SAAS,CAAC;QAC5B,CAAC;QACM,WAAW;YACjB,IAAI,CAAC,IAAI,CAAC,QAAQ,EAAE;gBACnB,IAAI,CAAC,QAAQ,GAAG,IAAI,IAAI,CAAC,SAAS,EAAE,CAAC;aACrC;YACD,OAAO,IAAI,CAAC,QAAQ,CAAC;QACtB,CAAC;KACD;IAbD,8BAaC"}
